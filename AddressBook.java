@@ -80,7 +80,9 @@ package addressbook;
 
 		@Override
 		public void display() {
-			
+			for(Person person : PersonArrayList) {
+				System.out.println(person.toString());
+			}
 		}		
 		
 	}

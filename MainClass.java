@@ -5,7 +5,7 @@ public class MainClass {
 	private static Scanner s;
 
 	public static void main(String[] args) {
-	s = new Scanner(System.in);
+	
 		
 		
 		AddressBookManager addressbookmanager =new AddressBookManager();
@@ -22,6 +22,7 @@ public class MainClass {
 			System.out.println("4.Saveas Address Book");
 			System.out.println("5.Close Address Book");
 			System.out.println("6.Quit");
+			s = new Scanner(System.in);
 			
 			int num =s.nextInt();
 			switch (num) {

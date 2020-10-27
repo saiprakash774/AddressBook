@@ -6,10 +6,10 @@ public class Person {
 	String lastName;
 	String city;
 	String state;
-	long phone;
-	int zip;
+	String phone;
+	String zip;
 
-	public Person(String firstName, String lastName, String city, String state, long phone, int zip) {
+	public Person(String firstName, String lastName, String city, String state, String phone, String zip) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.city = city;
@@ -41,16 +41,16 @@ public class Person {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public long getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(long phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 

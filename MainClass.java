@@ -46,13 +46,11 @@ public class MainClass {
 					addressbookmanager.closeAddressBook();
 					break;	
 			case 6:
-						value=0;
+					value=0;
+					break;
 			default :
 						System.out.println("Entered Wrong option");
-					
-					
-						
-				
+						break;
 			}
 			
 			 

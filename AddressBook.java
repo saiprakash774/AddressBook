@@ -42,14 +42,58 @@ package addressbook;
 
 		@Override
 		public void editPerson() {
+			 int num=1;
+			 Scanner s2=new Scanner(System.in);
+			 for(Person person : PersonArrayList)
+			 {
+			 System.out.println(person.toString());
+			 
+			System.out.println("Enter firstname of a person to edit details:");
+			String name=s2.nextLine();
+			if(name.equals(person.firstName)) {
+						
+
+			 
+			while(num==1) {		
+			System.out.println("Enter an option to edit:"
+					+"1.phone number\n"
+					+"2.address\n"
+					+"3.quit\n");
+			int value=s2.nextInt();
+			 Scanner s3=new Scanner(System.in);
+			switch(value) {
+			case 1:
+						System.out.println("Enter new phonenumber: ");
+						String phonenumber=s3.nextLine();
+						person.setPhone(phonenumber);
+						System.out.println(person.toString());
+						break;
+			case 2:
+						
+						System.out.println("Enter new city: ");
+						String city=s3.nextLine();
+						person.setCity(city);
+						System.out.println("Enter new state:");
+						String state=s3.nextLine();
+						person.setState(state);
+						System.out.println("Enter new zip code:");
+						String  zip=s3.nextLine();
+						person.setZip(zip);
+						break;
+			case 3:  
+						num=0;
+						break;
+			default:
+						System.out.println("wrong option entered");
+						break;
+			}
 			
-		/*	for(int i=0;i<PersonArrayList.size();i++) {
-			Scanner s2=new Scanner(System.in);
-			String value=s2.nextLine();
-			PersonArrayList.set(i,value);
-				
-		}
-			*/
+			}
+			 }
+			else {
+				System.out.println(" sorry Name not found");
+			}
+			 }			 
 			
 			
 		}

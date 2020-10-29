@@ -134,6 +134,11 @@ package addressbook;
 
 		@Override
 		public void sortByZip() {
+			Collections.sort(PersonArrayList, new Zipcomparator());
+			System.out.println("Sorted by zipcode of a Person");
+			for(Person person : PersonArrayList) {
+				System.out.println(person.toString());
+			}
 			
 		}
 

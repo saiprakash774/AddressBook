@@ -124,6 +124,11 @@ package addressbook;
 		
 		public void sortByName() {
 			
+			Collections.sort(PersonArrayList, new Namecomparator());
+			System.out.println("Sorted by Name of a Person");
+			for(Person person : PersonArrayList) {
+				System.out.println(person.toString());
+			}
 			
 		}
 

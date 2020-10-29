@@ -54,7 +54,7 @@ package addressbook;
 			System.out.println("Enter an option to edit:\n"
 					+"1.phone number\n"
 					+"2.address\n"
-					+"3.quit\n");
+					+"3.quit");
 			int value=s2.nextInt();
 			 Scanner s3=new Scanner(System.in);
 			switch(value) {
@@ -95,11 +95,11 @@ package addressbook;
 		public void deletePerson() {
 			int num=1;
 			Scanner s3=new Scanner(System.in);
-			System.out.println("Enter firstname of a person to delete person:");
+			System.out.println("Enter phone number of a person to delete person:");
 			String name=s3.nextLine();
 			for(Person person : PersonArrayList)
 			{	 
-						if(name.equals(person.firstName)) 
+						if(name.equals(person.phone)) 
 						{
 							Scanner s4=new Scanner(System.in);
 							System.out.println("enter 1 to confirm delete: ");
@@ -145,10 +145,10 @@ package addressbook;
 		@Override
 		public void searchPerson() {
 			Scanner s4=new Scanner(System.in);
-			System.out.println("Enter name of a person to search");
+			System.out.println("Enter phone number of a person to search");
 			String name=s4.nextLine();
 			 for(Person person : PersonArrayList) {
-			if(name.equals(person.firstName)) {
+			if(name.equals(person.phone)) {
 				
 				System.out.println("person found");
 				System.out.println(person.toString());	

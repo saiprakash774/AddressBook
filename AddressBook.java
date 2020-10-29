@@ -93,10 +93,37 @@ package addressbook;
 
 		@Override
 		public void deletePerson() {
+			int num=1;
+			Scanner s3=new Scanner(System.in);
+			System.out.println("Enter firstname of a person to delete person:");
+			String name=s3.nextLine();
+			for(Person person : PersonArrayList)
+			{	 
+						if(name.equals(person.firstName)) 
+						{
+							Scanner s4=new Scanner(System.in);
+							System.out.println("enter 1 to confirm delete: ");
+							int confirmation=s4.nextInt();
+							if(confirmation==1) 
+							{
+									PersonArrayList.remove(person);
+									break;
+							}
+							else
+									break;
+						} 
+						
+						else
+						{
+							System.out.println("Not found ");
+						}
+			}
+			
 			
 		}
 		
 		public void sortByName() {
+			
 			
 		}
 

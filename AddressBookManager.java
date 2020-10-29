@@ -61,8 +61,9 @@ public class AddressBookManager implements InAddressBookManager {
 		System.out.println("3.delete person");
 		System.out.println("4.Sort By name");
 		System.out.println("5.Sort By Zip");
-		System.out.println("6.Display");
-		System.out.println("7.Quit");
+		System.out.println("6.Search person");
+		System.out.println("7.Display");
+		System.out.println("8.Quit");
 		
 		s1 = new Scanner(System.in);
 		int num =s1.nextInt();
@@ -74,22 +75,25 @@ public class AddressBookManager implements InAddressBookManager {
 						case 2:
 								addressbook.editPerson();
 								break;
-				
 						case 3:
+								addressbook.deletePerson();
+								break;
+				
+						case 4:
 								addressbook.sortByName();
 								break;
 			   
-						case 4:
+						case 5:
 								addressbook.sortByZip();
 								break;
 				
-						case 5:
+						case 6:
 								addressbook.searchPerson();
 								break;	
-						case 6:
+						case 7:
 								addressbook.display();
 								break;
-						case 7:
+						case 8:
 								value=0;
 				
 					   default :

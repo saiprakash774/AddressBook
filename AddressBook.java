@@ -1,7 +1,6 @@
 package addressbook;
 
 	
-	import java.util.ArrayList;
 	import java.util.*;
 
 
@@ -36,26 +35,23 @@ package addressbook;
 				
 				Person person = new Person( firstname,lastname, city,state, phone, zip);
 			    PersonArrayList.add(person);
-			   //	s1.close();
-				//System.out.println(PersonArrayList);
 		}
 
 		@Override
 		public void editPerson() {
-			 int num=1;
+			 int num=0;
 			 Scanner s2=new Scanner(System.in);
+				System.out.println("Enter firstname of a person to edit details:");
+				String name=s2.nextLine();
 			 for(Person person : PersonArrayList)
 			 {
-			 System.out.println(person.toString());
+		//	 System.out.println(person.toString());
 			 
-			System.out.println("Enter firstname of a person to edit details:");
-			String name=s2.nextLine();
+		
 			if(name.equals(person.firstName)) {
-						
-
-			 
-			while(num==1) {		
-			System.out.println("Enter an option to edit:"
+			
+			while(num==0) {		
+			System.out.println("Enter an option to edit:\n"
 					+"1.phone number\n"
 					+"2.address\n"
 					+"3.quit\n");
@@ -81,18 +77,15 @@ package addressbook;
 						person.setZip(zip);
 						break;
 			case 3:  
-						num=0;
+						num=1;
 						break;
-			default:
+		   default:
 						System.out.println("wrong option entered");
 						break;
 			}
 			
 			}
 			 }
-			else {
-				System.out.println(" sorry Name not found");
-			}
 			 }			 
 			
 			
@@ -101,25 +94,30 @@ package addressbook;
 		@Override
 		public void deletePerson() {
 			
-			
 		}
-
-		@Override
+		
 		public void sortByName() {
-			
 			
 		}
 
 		@Override
 		public void sortByZip() {
 			
-			
 		}
 
 		@Override
 		public void searchPerson() {
-			
-			
+			Scanner s4=new Scanner(System.in);
+			System.out.println("Enter name of a person to search");
+			String name=s4.nextLine();
+			 for(Person person : PersonArrayList) {
+			if(name.equals(person.firstName)) {
+				
+				System.out.println("person found");
+				System.out.println(person.toString());	
+			}		
+
+			}	
 		}
 
 		@Override

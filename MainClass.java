@@ -1,7 +1,6 @@
 package addressbook;
 import java.util.Scanner;
 public class MainClass {
-
 	private static Scanner s;
 
 	public static void main(String[] args) {

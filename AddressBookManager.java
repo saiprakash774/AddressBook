@@ -1,13 +1,15 @@
 package addressbook;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 public class AddressBookManager implements InAddressBookManager 
 {
+	public String filename;
 	public void newAddressBook()
 	{
 		System.out.println("Enter name of AddressBook: ");
 			Scanner addressbookname=new Scanner(System.in);
-			String filename=addressbookname.nextLine();
+			filename=addressbookname.nextLine();
 			try
 			{
 				File file= new File("D:\\javacsvfiles\\"+filename+".csv");
@@ -30,7 +32,25 @@ public class AddressBookManager implements InAddressBookManager
 	{
 		AddressBook addressbook = new AddressBook();
 		Scanner s1=new Scanner(System.in);
-		int value=1;		
+		Scanner addressbookobj=new Scanner(System.in);	
+		File file=new File("D:\\javacsvfiles");
+		String[] filenames=file.list();
+		if(filenames==null) {
+			System.out.println("File with name does not exists");
+		}
+		else {
+			for(int i=0;i<filenames.length;i++) {
+				String filename=filenames[i];
+				System.out.println(filename);
+			}
+		}
+		System.out.println("Enter name of AddressBook to open: ");
+		String addressbookname=addressbookobj.next();
+		for(int i=0;i<filenames.length;i++) {
+			String filename=filenames[i];
+			System.out.println(filename);
+		if(addressbookname.equalsIgnoreCase(filename)) {
+		int value=1;
 		while (value==1)
 		{
 			System.out.println("Enter one of the following option to perform oeration on Address: ");
@@ -72,8 +92,13 @@ public class AddressBookManager implements InAddressBookManager
 				default :
 						System.out.println("Entered Wrong option");	
 			}		
-		}		
-	}
+		}
+		}
+		else
+			System.out.println("addressbook name not found:");
+		}
+		}
+
 		public void saveAddressBook()
 		{
 		
